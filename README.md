@@ -34,6 +34,12 @@ SELECT COUNT(plane)as count FROM trip WHERE  plane = 'TU-134';
 SELECT DISTINCT company.name FROM company JOIN trip on company.id = trip.company where trip.plane = 'Boeing';
 ```
 
+### Task 13: Full namesakes
+Display the names of people who have a full namesake among the passengers
+```sql
+Select name from Passenger Group by Passenger.name HAVING Count(name)>1;
+```
+
 
 ### Task 19: Who bought the potatoes?
 Determine which family member bought the potatoes.
