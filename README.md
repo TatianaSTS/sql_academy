@@ -47,6 +47,12 @@ Determine which family member bought the potatoes.
 Select Distinct status from FamilyMembers join Payments on member_id=family_member join Goods on good=good_id where good_name='potato';
 ```
 
+### Task 21: Items purchased more than once
+Identify items that were purchased more than once
+```sql
+Select good_name from Goods join Payments on Goods.good_id=Payments.good group by good_name HAVING COUNT(good)>1;
+```
+
 ### Task 23: The Most Expensive Delicacy
 Find the most expensive delicacy and display its price.
 ```sql
