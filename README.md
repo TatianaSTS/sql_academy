@@ -16,9 +16,14 @@ The project is created for:
  
 ---
  
-## 📚 Sample SQL Queries
+## 📚 SQL Queries
  
 ### Task 4: List people's names that end with "man"
 ```sql
 Select Passenger.name from Passenger WHERE Passenger.name like '%man';
 ```
+
+### Task 5: Number of flights on the TU-134
+```sql
+SELECT COUNT(plane)as count FROM trip WHERE  plane = 'TU-134';
+
