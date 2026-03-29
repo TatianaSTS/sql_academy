@@ -71,6 +71,18 @@ LIMIT 1;
 Select COUNT(*) as count from Student where Student.first_name='Anna';
 ```
 
+### Task 45: Most Used Rooms
+Which rooms were used most often for classes? Display the ones that were used the most.
+```sql
+SELECT classroom FROM Schedule
+GROUP BY classroom
+HAVING COUNT(classroom) = 
+ (Select COUNT(classroom) as count from Schedule
+ group by classroom
+  Order by count DESC 
+  limit 1);
+```
+
 ### Task 74: Internet Availability in the room
 Print the identifier and the internet availability indicator for the premises.
 If the internet is available in the rental property, print "YES"; otherwise, print "NO."
