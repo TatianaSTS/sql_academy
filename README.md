@@ -66,6 +66,14 @@ ORDER BY unit_price DESC
 LIMIT 1;
 ```
 
+### Task 27: Spending by Product Group in 2005
+Find out how much was spent on each product group in 2005. Display the group name and the amount spent on it. If the amount spent is zero, meaning no products from this group were purchased in 2005, do not display it.
+```sql
+SELECT good_type_name,SUM(amount*unit_price) as costs From GoodTypes join Goods on GoodTypes.good_type_id=type join Payments on Goods.good_id=Payments.good 
+WHERE  YEAR(date)='2005'
+GROUP BY good_type_name
+```
+
 ### Task 38: How many students are named Anna in school?
 ```sql
 Select COUNT(*) as count from Student where Student.first_name='Anna';
