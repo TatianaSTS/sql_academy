@@ -33,6 +33,17 @@ SELECT COUNT(plane)as count FROM trip WHERE  plane = 'TU-134';
 ```sql
 SELECT DISTINCT company.name FROM company JOIN trip on company.id = trip.company where trip.plane = 'Boeing';
 ```
+### Task 12: Number of passengers on flights
+Display the flight IDs and the number of passengers on them. Please note that some flights may have no passengers. In this case, display the number "0."
+```sql
+SELECT 
+    Trip.id,
+    COUNT(Pass_in_trip.passenger) AS count
+FROM Trip LEFT JOIN
+ Pass_in_trip ON Trip.id = Pass_in_trip.trip
+GROUP BY 
+    Trip.id;
+```
 
 ### Task 13: Full namesakes
 Display the names of people who have a full namesake among the passengers
